@@ -8,7 +8,7 @@ function Introduction({name, description}){
             <Typography style={{color: "#fff", fontWeight: 'light', fontSize: 90, fontFamily: 'Helvetica'}}>
                 {name}
             </Typography>
-            <Typography variant = 'subtitle1' style={{color: "#D3D3D3", fontSize: 25}}>
+            <Typography variant = 'subtitle1' style={{color: "#D3D3D3", fontSize: 20, marginTop: -40}}>
                 {description}
             </Typography>
             

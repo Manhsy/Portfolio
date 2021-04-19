@@ -17,7 +17,6 @@ const useStyles = makeStyles((theme) => ({
     cardHovered: {
         transform: "scale3d(1.05, 1.05, 1)"
       },
-
   }));
 
 
