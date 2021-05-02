@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "#202022",
     },
     cardHovered: {
-        transform: "scale3d(1.05, 1.05, 1)"
+        transform: "scale3d(1.08, 1.08, 1)"
       },
   }));
 
