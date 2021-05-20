@@ -28,34 +28,65 @@ import numpyIcon from '@iconify-icons/file-icons/numpy';
 
 //images
 import emailRocketImage from '../image/source.gif'
-import yelpImage from '../image/yelp.jpeg'
+import yelpImage from '../image/ultimate_guide_to_yelp_for_business_post_image_16.jpeg'
 import networkIntrusionImage from '../image/Network-Intrusion.jpeg'
-import computerVisionImage from '../image/computerVision.jpeg'
+import computerVisionImage from '../image/1_6j34dAOTijqP6HDFnjxPFA_udggex.jpeg'
+import antImage from '../image/dcwhdzw-02b0de37-ce78-4b22-95a7-1e458b1fd340.jpeg'
+import apiImage from '../image/Callr-Blog-Banners-What-is-an-API-V2-compressor-850x478.jpeg'
+import stackOverflowImage from '../image/1_cbiq9DqLP_UEVqIOBb6MqQ.jpeg'
+import connectFourImage from '../image/Connect4-2i3b5pb.png'
+
 
 const emailRocketProject = {
-name: "Email-rocket",
-description: "Using React, I created a web application that allows users to send the same emails to multiple recipients.",
-image: emailRocketImage,
-link: "https://email-rocket.netlify.app"
+  name: "Email-rocket",
+  description: "Using React, I created a web application that allows users to send the same emails to multiple recipients. As the outcome of this project, a senior project group was able to contact thousands of possible clients.",
+  image: emailRocketImage,
+  link: "https://email-rocket.netlify.app"
 }
 const yelpRatingProject = {
-name: "Yelp Rating Predictor",
-description: "Using React, I created a web application that allows users to send the same emails to multiple recipients.",
-image: yelpImage,
-link: "https://github.com/Manhsy/Yelp-Rating-Predictor"
+  name: "Yelp Rating Predictor",
+  description: "Using Python and its machine learning frameworks, I created a neural network that can predict a business's Yelp rating based on all the reviews that they've received.",
+  image: yelpImage,
+  link: "https://github.com/Manhsy/Yelp-Rating-Predictor"
 }
 const networkIntrusionProject = {
-name: "Network Intrusion Detector",
-description: "Using React, I created a web application that allows users to send the same emails to multiple recipients.",
-image: networkIntrusionImage,
-link: "https://github.com/Manhsy/Network-Intrusion-Detector"
+  name: "Network Intrusion Detector",
+  description: "Using Python and its machine learning frameworks, I created convolutional and fully connected neural network models that can classify if an incoming network connection is an intrusion.",
+  image: networkIntrusionImage,
+  link: "https://github.com/Manhsy/Network-Intrusion-Detector"
 }
+const antProject = {
+  name: "Life of an Ant",
+  description: "Using Java and CodeName One, I created a game mobile application that simulates the life of an ant where it can collide with destination flag, spiders, and food stations when it gets hungry.",
+  image: antImage,
+  link: "https://github.com/Manhsy/Ant-Game"
+}
+
+const twitterAPIProject = {
+  name: "Twitter API",
+  description: "Using JavaScript, Node.js, and MongoDb, I replicated Twitter's API with endpoints that allows clients to follow, like, make posts, and check out other users ",
+  image: apiImage,
+  link: "https://github.com/Manhsy/twitter-api"
+  }
 const computerVisionProject = {
-name: "Computer Vision",
-description: "Using React, I created a web application that allows users to send the same emails to multiple recipients.",
-image: computerVisionImage,
-link: "https://github.com/Manhsy/Computer-vision"
+  name: "Image Classifier",
+  description: "Using Python and its machine learning frameworks, I created a convolutional neural network that can classify an image's category",
+  image: computerVisionImage,
+  link: "https://github.com/Manhsy/Computer-vision"
 }
+const stackOverflow = {
+  name: "Stack Overflow Difficulty Level",
+  description: "Convolutional and fully connected neural network models that can classify an easy, medium, or hard Stack Overflow questions",
+  image: stackOverflowImage,
+  link: "https://github.com/Manhsy/Stack-Overflow-question-difficulty-level"
+  }
+const ConnectFour = {
+  name: "Image Classifier",
+  description: "Using Java, I recreated the Connect Four game with a twist of the opponent being an AI-like algorithm that can calculate one move ahead.",
+  image: connectFourImage,
+  link: "https://github.com/Manhsy/Connect-Four"
+}
+
 
 function RightPannelGrid(){
     return (
@@ -80,6 +111,18 @@ function RightPannelGrid(){
                       <ProjectCards info = {networkIntrusionProject}/>
                     </Grid>
                     <Grid item >
+                      <ProjectCards info = {antProject}/>
+                    </Grid>
+                  </Grid>
+                </Grid>
+              </div>
+              <div style = {{marginRight: 55, marginTop: 15}}> 
+                <Grid item>
+                  <Grid container direction="row" justify="flex-end" alignItems="flex-start" spacing = {2} >
+                    <Grid item >
+                      <ProjectCards info = {twitterAPIProject}/>
+                    </Grid>
+                    <Grid item >
                       <ProjectCards info = {computerVisionProject}/>
                     </Grid>
                   </Grid>
@@ -89,22 +132,10 @@ function RightPannelGrid(){
                 <Grid item>
                   <Grid container direction="row" justify="flex-end" alignItems="flex-start" spacing = {2} >
                     <Grid item >
-                      <ProjectCards info = {networkIntrusionProject}/>
+                      <ProjectCards info = {stackOverflow}/>
                     </Grid>
                     <Grid item >
-                      <ProjectCards info = {computerVisionProject}/>
-                    </Grid>
-                  </Grid>
-                </Grid>
-              </div>
-              <div style = {{marginRight: 55, marginTop: 15}}> 
-                <Grid item>
-                  <Grid container direction="row" justify="flex-end" alignItems="flex-start" spacing = {2} >
-                    <Grid item >
-                      <ProjectCards info = {networkIntrusionProject}/>
-                    </Grid>
-                    <Grid item >
-                      <ProjectCards info = {computerVisionProject}/>
+                      <ProjectCards info = {ConnectFour}/>
                     </Grid>
                   </Grid>
                 </Grid>
@@ -158,7 +189,7 @@ function RightPannelGrid(){
                   </Grid>
                 </Grid>
 
-                <Typography style = {{color: "white", marginBottom: 15, marginTop: 30}}> Other </Typography>
+                <Typography style = {{color: "white", marginBottom: 15, marginTop: 30}}> Tools </Typography>
                 <Grid container id = 'Other' direction="row" justify="flex-start" alignItems="flex-start" spacing = {1}>
                   <Grid item>
                     <TechCard tech ='Github'icon = {<VscGithub/>}/>
@@ -171,9 +202,6 @@ function RightPannelGrid(){
                   </Grid>
                   <Grid item>
                     <TechCard tech ='SCRUM'icon = {<DiScrum/>}/>
-                  </Grid>
-                  <Grid item>
-                    <TechCard tech ='NLP'/>
                   </Grid>
                   <Grid item>
                     <TechCard tech ='Jupyter'icon = {<SiJupyter/>}/>

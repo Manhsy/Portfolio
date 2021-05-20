@@ -11,6 +11,7 @@ import Divider from '@material-ui/core/Divider';
 
 const useStyles = makeStyles((theme) => ({
     root: {
+      height: 385,
       maxWidth: 377,
       backgroundColor: "#202022",
     },
@@ -48,7 +49,7 @@ function ProjectCards({info}){
             </CardActionArea>
             <Divider variant = "middle" light = {true} />
             <CardActions>
-                <Button color="inherit" href= {info.link} target="_blank" style = {{color:"#FFFFFF"}}>
+                <Button align = 'bottom' color="inherit" href= {info.link} target="_blank" style = {{color:"#FFFFFF"}}>
                     Learn More
                 </Button>
             </CardActions>

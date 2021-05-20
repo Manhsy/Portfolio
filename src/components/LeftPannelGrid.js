@@ -9,9 +9,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import { VscGithub } from "react-icons/vsc";
 import { IconContext } from "react-icons";
-import { RiExternalLinkLine } from "react-icons/ri";
 import Typography from '@material-ui/core/Typography';
 import { FaLinkedin } from "react-icons/fa";
+import { MdEmail } from  "react-icons/md";
 
 import avatar from "../image/icon.jpeg";
 
@@ -21,9 +21,12 @@ const name = (
       <p style ={{marginTop: -120}}>Manh Sy.</p>
     </>
   );
-const introduction = <span>Pues...En realidad, no es mucho difícil, 
-    no es como mis amigos dicen; dicen que español es taaaaaaaan difícil, son (o están?) equivocado. Si sigue en las clases (que no ellos hacen), la aprendizaje no es un problema.
-    Solamente he estudiado español durante casi tres años ahora, y mira! Ya mi español es mas o menos! Puedo hablar un poco sin un diccionario, es bastante bien.
+const introduction = <span>Highly motivated Computer Science student at California State University, Sacramento. My love for computer science started when I was introduced to it during my first year of college. At the time, I was a Kinesiology major, 
+    however, I quickly learned that I enjoy subjects that allows me to exercise my creative problem solving skills. 
+    <br/>
+    <br/> 
+    Though I am still unsure on what areas of computer science I want to focus on, I have dipped my toes in areas that pertains to Machine Learning, web development, and API development. All of which you can check out on this page, enjoy!
+
     </span>
 
 function IntroductionGrid(){
@@ -49,11 +52,10 @@ function IntroductionGrid(){
                             <Button href = "https://github.com/Manhsy" target="_blank">
                             <IconContext.Provider value={{ color: "white", size: 20}}>
                                 <VscGithub/> 
-                                    <div style =  {{marginLeft: 16, marginRight: 16}}>
+                                    <div style =  {{marginLeft: 10, marginRight: 11}}>
                                         <Typography align = 'left' variant="subtitle" component="p" style = {{color:"#FFFFFF"}}>    GitHub
                                         </Typography> 
                                     </div>
-                                <RiExternalLinkLine/>
                             </IconContext.Provider>
                         </Button>
                     </Grid>
@@ -61,11 +63,21 @@ function IntroductionGrid(){
                             <Button href = "https://linkedin.com/in/Mtsss" target="_blank">
                             <IconContext.Provider value={{ color: "white", size: 20}}>
                                 <FaLinkedin/> 
-                                    <div style =  {{marginLeft: 16, marginRight: 16}}>
+                                    <div style =  {{marginLeft: 10, marginRight: 11}}>
                                         <Typography align = 'left' variant="subtitle" component="p" style = {{color:"#FFFFFF"}}>    LinkedIn
                                         </Typography> 
                                     </div>
-                                <RiExternalLinkLine/>
+                            </IconContext.Provider>
+                        </Button>
+                    </Grid>
+                    <Grid item style =  {{marginLeft: 16}}>
+                        <Button href="mailto:manhsy@csus.edu" target="_blank">
+                            <IconContext.Provider value={{ color: "white", size: 25}}>
+                                <MdEmail/> 
+                                    <div style = {{marginLeft: 10, marginRight: 11}}>
+                                        <Typography align = 'left' variant="subtitle" component="p" style = {{color:"#FFFFFF"}}>    Manhsy@csus.edu
+                                        </Typography> 
+                                    </div>
                             </IconContext.Provider>
                         </Button>
                     </Grid>
