@@ -11,9 +11,22 @@ import Divider from '@material-ui/core/Divider';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-      height: 385,
-      maxWidth: 377,
-      backgroundColor: "#202022",
+        padding: theme.spacing(1),
+        [theme.breakpoints.down('sm')]: {
+            height: 385,
+            maxWidth: 377,
+            backgroundColor: "#202022",
+        },
+        [theme.breakpoints.up('md')]: {
+            height: 415,
+            maxWidth: 500,
+            backgroundColor: "#202022",
+        },
+        [theme.breakpoints.up('lg')]: {
+            height: 385,
+            maxWidth: 377,
+            backgroundColor: "#202022",
+        },
     },
     cardHovered: {
         transform: "scale3d(1.08, 1.08, 1)"
@@ -44,6 +57,7 @@ function ProjectCards({info}){
                     </Typography>
                     <Typography align = 'left' variant="body2" component="p" style = {{color:"#FFFFFF"}}>
                         {info.description}
+
                     </Typography>
                 </CardContent>
             </CardActionArea>

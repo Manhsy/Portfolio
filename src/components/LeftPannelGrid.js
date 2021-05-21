@@ -38,6 +38,7 @@ const sickyStyle = makeStyles((theme) => ({
       padding: theme.spacing(1),
       [theme.breakpoints.down('sm')]: {
         position: "relative",
+
       },
       [theme.breakpoints.up('md')]: {
         position: "relative",
@@ -46,62 +47,74 @@ const sickyStyle = makeStyles((theme) => ({
         position: "fixed",
       },
     },
+    content: {
+        padding: theme.spacing(1),
+        [theme.breakpoints.down('sm')]: {
+            marginLeft: 100, marginRight: 100
+  
+        },
+        [theme.breakpoints.up('md')]: {
+            marginLeft: 90, marginRight: 50
+        },
+        [theme.breakpoints.up('lg')]: {
+            marginLeft: 150, marginRight: 50
+        },
+    }
   }));
 function LeftPannelGrid(props){
     const classes = useStyles();
     const stickyClass = sickyStyle();
     return (
-        <Grid className={stickyClass.root} container sx = "12" lg = "6" md = "12"  direction="column" justify="flex-start" alignItems="flex-start" style={{top: "1rem" }}>
-            <div style = {{marginLeft: 200}}> 
-                <Grid item>
+            <Grid className={stickyClass.root} container sx = "12" lg = "6" md = "12"  direction="column" justify="flex-start" alignItems="flex-start" style={{top: "1rem" }}>
+                <Grid item className={stickyClass.content}> 
                     <Introduction name = {name} description = {introduction}/>
                 </Grid> 
-            </div>
-            <Grid item style = {{marginLeft: 200, marginTop: 90}}>
-                <Navigators title = "PROJECTS" index = "01" onClick={() => document.querySelector('#project').scrollIntoView({ behavior: 'smooth'})}/>
-                <Navigators title = "TECHNOLOGIES" index = "02" onClick={() => document.querySelector('#techonologies').scrollIntoView({ behavior: 'smooth'})}/>
-            </Grid> 
-            <Grid item style = {{marginLeft: 200, marginTop: 120}}>
-                <Grid container id = 'Other' direction="row" justify="flex-start" alignItems="flex-start" spacing = {1}>
-                    <Grid item style = {{marginTop: -15}}>
-                        <Avatar src={avatar} className={classes.size}/>
+                <Grid item className={stickyClass.content} style = {{ marginTop: 90}}>
+                    <Navigators title = "PROJECTS" index = "01" onClick={() => document.querySelector('#project').scrollIntoView({ behavior: 'smooth'})}/>
+                    <Navigators title = "TECHNOLOGIES" index = "02" onClick={() => document.querySelector('#techonologies').scrollIntoView({ behavior: 'smooth'})}/>
+                </Grid> 
+                <Grid item item className={stickyClass.content} style = {{marginTop: 120}}>
+                    <Grid container id = 'Other' direction="row" justify="flex-start" alignItems="flex-start" spacing = {1}>
+                        <Grid item style = {{marginTop: -15}}>
+                            <Avatar src={avatar} className={classes.size}/>
+                        </Grid>
+                        <Grid item style =  {{marginLeft: 20}}>
+                                <Button href = "https://github.com/Manhsy" target="_blank">
+                                <IconContext.Provider value={{ color: "white", size: 20}}>
+                                    <VscGithub/> 
+                                        <div style =  {{marginLeft: 10, marginRight: 11}}>
+                                            <Typography align = 'left' variant="subtitle" component="p" style = {{color:"#FFFFFF"}}>    GitHub
+                                            </Typography> 
+                                        </div>
+                                </IconContext.Provider>
+                            </Button>
+                        </Grid>
+                        <Grid item style =  {{marginLeft: 16}}>
+                                <Button href = "https://linkedin.com/in/Mtsss" target="_blank">
+                                <IconContext.Provider value={{ color: "white", size: 20}}>
+                                    <FaLinkedin/> 
+                                        <div style =  {{marginLeft: 10, marginRight: 11}}>
+                                            <Typography align = 'left' variant="subtitle" component="p" style = {{color:"#FFFFFF"}}>    LinkedIn
+                                            </Typography> 
+                                        </div>
+                                </IconContext.Provider>
+                            </Button>
+                        </Grid>
+                        <Grid item style =  {{marginLeft: 16}}>
+                            <Button href="mailto:manhsy@csus.edu" target="_blank">
+                                <IconContext.Provider value={{ color: "white", size: 25}}>
+                                    <MdEmail/> 
+                                        <div style = {{marginLeft: 10, marginRight: 11}}>
+                                            <Typography align = 'left' variant="subtitle" component="p" style = {{color:"#FFFFFF"}}>    Manhsy@csus.edu
+                                            </Typography> 
+                                        </div>
+                                </IconContext.Provider>
+                            </Button>
+                        </Grid>
                     </Grid>
-                    <Grid item style =  {{marginLeft: 20}}>
-                            <Button href = "https://github.com/Manhsy" target="_blank">
-                            <IconContext.Provider value={{ color: "white", size: 20}}>
-                                <VscGithub/> 
-                                    <div style =  {{marginLeft: 10, marginRight: 11}}>
-                                        <Typography align = 'left' variant="subtitle" component="p" style = {{color:"#FFFFFF"}}>    GitHub
-                                        </Typography> 
-                                    </div>
-                            </IconContext.Provider>
-                        </Button>
-                    </Grid>
-                    <Grid item style =  {{marginLeft: 16}}>
-                            <Button href = "https://linkedin.com/in/Mtsss" target="_blank">
-                            <IconContext.Provider value={{ color: "white", size: 20}}>
-                                <FaLinkedin/> 
-                                    <div style =  {{marginLeft: 10, marginRight: 11}}>
-                                        <Typography align = 'left' variant="subtitle" component="p" style = {{color:"#FFFFFF"}}>    LinkedIn
-                                        </Typography> 
-                                    </div>
-                            </IconContext.Provider>
-                        </Button>
-                    </Grid>
-                    <Grid item style =  {{marginLeft: 16}}>
-                        <Button href="mailto:manhsy@csus.edu" target="_blank">
-                            <IconContext.Provider value={{ color: "white", size: 25}}>
-                                <MdEmail/> 
-                                    <div style = {{marginLeft: 10, marginRight: 11}}>
-                                        <Typography align = 'left' variant="subtitle" component="p" style = {{color:"#FFFFFF"}}>    Manhsy@csus.edu
-                                        </Typography> 
-                                    </div>
-                            </IconContext.Provider>
-                        </Button>
-                    </Grid>
-                </Grid>
-            </Grid> 
-      </Grid>
+                </Grid> 
+        </Grid>
+
     );
 }
 

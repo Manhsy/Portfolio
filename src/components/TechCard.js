@@ -7,7 +7,6 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-      maxWidth: 377,
       backgroundColor: "#202022",
     },
     cardHovered: {

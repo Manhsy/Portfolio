@@ -4,6 +4,7 @@ import {Grid} from "@material-ui/core";
 import Typography from '@material-ui/core/Typography';
 import TechCard from './TechCard';
 import ProjectCards from './ProjectCards';
+import { makeStyles } from '@material-ui/core/styles';
 
 //icons
 import { FaJava } from 'react-icons/fa';
@@ -85,14 +86,29 @@ const ConnectFour = {
   image: connectFourImage,
   link: "https://github.com/Manhsy/Connect-Four"
 }
-function RightPannelGrid(){
+const makeStyle = makeStyles((theme) => ({
+  content: {
+    padding: theme.spacing(1),
 
+    [theme.breakpoints.down('sm')]: {
+        marginLeft: -40, marginRight: 20, marginTop: 50
+    },
+    [theme.breakpoints.up('md')]: {
+        marginLeft: -10, marginRight: 20, marginTop: 50
+    },
+    [theme.breakpoints.up('lg')]: {
+        marginLeft: -55, marginRight: 20, marginTop: 50
+    },
+  }
+}));
+function RightPannelGrid(){
+    const styles = makeStyle();
     return (
-          <Grid container  sx = "12" lg = "12" md = "6" direction="column" justify="flex-end" alignItems="flex-end" spacing = {7}>
+          <Grid container className={styles.content} sx = "12" lg = "12" md = "12" direction="column" justify="flex-end" alignItems="flex-end" spacing = {7}>
             <Grid item id = "project" >
-              <div style = {{marginTop: 75, marginRight: 130}}> 
-                <Grid item>
-                  <Grid container direction="row" justify="flex-end" alignItems="flex-end" spacing = {2}>
+            <Grid container id = 'Other' direction="column" justify="flex-start" alignItems="flex-end" spacing = {3}>
+              <Grid item>
+                <Grid container direction="row" justify="flex-end" alignItems="flex-end" spacing = {2} >
                     <Grid item>
                       <ProjectCards info = {emailRocketProject}/> 
                     </Grid>
@@ -100,23 +116,20 @@ function RightPannelGrid(){
                       <ProjectCards info = {yelpRatingProject}/> 
                     </Grid>
                   </Grid>
-                </Grid>
-              </div>
-              <div style = {{marginRight: 130, marginTop: 15}}> 
-                <Grid item>
+              </Grid>
+              <Grid item>
                   <Grid container direction="row" justify="flex-end" alignItems="flex-end" spacing = {2} >
-                    <Grid item >
+                    <Grid item>
                       <ProjectCards info = {networkIntrusionProject}/>
                     </Grid>
                     <Grid item >
                       <ProjectCards info = {antProject}/>
                     </Grid>
                   </Grid>
-                </Grid>
-              </div>
-              <div style = {{marginRight: 130, marginTop: 15}}> 
-                <Grid item>
-                  <Grid container direction="row" justify="flex-end" alignItems="flex-end" spacing = {2} >
+              </Grid>
+
+              <Grid item>
+                <Grid container direction="row" justify="flex-end" alignItems="flex-end" spacing = {2} >
                     <Grid item >
                       <ProjectCards info = {twitterAPIProject}/>
                     </Grid>
@@ -124,11 +137,9 @@ function RightPannelGrid(){
                       <ProjectCards info = {computerVisionProject}/>
                     </Grid>
                   </Grid>
-                </Grid>
-              </div>
-              <div style = {{marginRight: 130, marginTop: 15}}> 
-                <Grid item>
-                  <Grid container direction="row" justify="flex-end" alignItems="flex-end" spacing = {2} >
+              </Grid>  
+              <Grid item>
+                <Grid container direction="row" justify="flex-end" alignItems="flex-end" spacing = {2} >
                     <Grid item >
                       <ProjectCards info = {stackOverflow}/>
                     </Grid>
@@ -136,12 +147,12 @@ function RightPannelGrid(){
                       <ProjectCards info = {ConnectFour}/>
                     </Grid>
                   </Grid>
-                </Grid>
-              </div>
+                </Grid>            
+            </Grid>
             </Grid>
             <Grid item id = 'techonologies'>
-              <div style = {{marginTop: 55, marginRight: 110}}> 
-                <Typography style = {{color: "white", marginBottom: 15, marginTop: 30}}> Programming Languages</Typography>
+              <div> 
+                <Typography style = {{color: "white", marginBottom: 15, marginTop: 20}}> Programming Languages</Typography>
                 <Grid container id = 'Languages' direction="row" justify="flex-start" alignItems="flex-end" spacing = {1}>
                   <Grid item>
                     <TechCard tech = 'Java'icon = {<FaJava/>}/>
@@ -205,7 +216,6 @@ function RightPannelGrid(){
                     <TechCard tech ='Jupyter'icon = {<SiJupyter/>}/>
                   </Grid>
                 </Grid>
-
                 <Typography style = {{color: "white", marginBottom: 15, marginTop: 30}}> IDE </Typography>
                 <Grid container id = 'IDE' direction="row" justify="flex-start" alignItems="flex-end" spacing = {1}>
                   <Grid item>
