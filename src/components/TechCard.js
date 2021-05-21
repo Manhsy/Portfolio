@@ -15,7 +15,6 @@ const useStyles = makeStyles((theme) => ({
       },
   }));
 
-
 function TechCard({tech, icon}){
     const classes = useStyles();
     const [state, setState] = useState({

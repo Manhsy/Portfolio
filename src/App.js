@@ -3,9 +3,11 @@ import React from 'react';
 import {Grid} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
 
+
 //component import
 import RightPannelGrid from './components/RightPannelGrid';
 import LeftPannelGrid from './components/LeftPannelGrid';
+
 
 const useStyles = makeStyles ((theme) => ({
   grid: {
@@ -19,9 +21,14 @@ function App() {
   const classes = useStyles();
   return (
     <div> 
-      <Grid container sx = "12" md = "12" lg = "12" className={classes.grid} direction="row" justify="flex-start" alignItems="flex-start" >
+      <Grid container sx = "12" md = "12" lg = "12" className={classes.grid} direction="row" justify="flex-start" alignItems="flex-start" spacing={100}>
+          <Grid item md>
             <LeftPannelGrid/>
+          </Grid>
+          <Grid item md>
             <RightPannelGrid/>
+            </Grid>
+
       </Grid>
     </div>
 

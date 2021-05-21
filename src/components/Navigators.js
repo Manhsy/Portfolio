@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Navigator({ index, title, onClick }) {
+export default function Navigator({ index, title, onClick}) {
   const [isHovering, setIsHovering] = useState(false);
   return (
     <div id="navigator"
@@ -12,8 +12,7 @@ export default function Navigator({ index, title, onClick }) {
         marginTop: 40,
         alignItems: "center",
         cursor: "pointer",
-      }}
-    >
+      }}>
       <span style={{ color: isHovering ? "#fff" : "#ccc", fontSize: "0.8em" }}>
         {index}
       </span>

@@ -2,6 +2,7 @@
 import React from 'react';
 import {Grid} from "@material-ui/core";
 
+
 import Introduction from './Introduction';
 import Navigators from './Navigators';
 import Avatar from '@material-ui/core/Avatar';
@@ -14,7 +15,12 @@ import { FaLinkedin } from "react-icons/fa";
 import { MdEmail } from  "react-icons/md";
 
 import avatar from "../image/icon.jpeg";
-
+const useStyles = makeStyles((theme) => ({
+    size: {
+      width: theme.spacing(8),
+      height: theme.spacing(8),
+    },
+  }));
 const name = (
     <>
       <p style ={{marginTop: 45}}>Hello, I'm</p>
@@ -26,29 +32,41 @@ const introduction = <span>Highly motivated Computer Science student at Californ
     <br/>
     <br/> 
     Though I am still unsure on what areas of computer science I want to focus on, I have dipped my toes in areas that pertains to Machine Learning, web development, and API development. All of which you can check out on this page, enjoy!
-
     </span>
-
-function IntroductionGrid(){
-
+const sickyStyle = makeStyles((theme) => ({
+    root: {
+      padding: theme.spacing(1),
+      [theme.breakpoints.down('sm')]: {
+        position: "relative",
+      },
+      [theme.breakpoints.up('md')]: {
+        position: "relative",
+      },
+      [theme.breakpoints.up('lg')]: {
+        position: "fixed",
+      },
+    },
+  }));
+function LeftPannelGrid(props){
+    const classes = useStyles();
+    const stickyClass = sickyStyle();
     return (
-        <Grid container sx = "12" lg = "5" md = "12"  direction="column" justify="flex-start" alignItems="flex-start" style={{ position: "sticky", top: "1rem" }}>
-            <div style = {{marginLeft: 100}}> 
+        <Grid className={stickyClass.root} container sx = "12" lg = "6" md = "12"  direction="column" justify="flex-start" alignItems="flex-start" style={{top: "1rem" }}>
+            <div style = {{marginLeft: 200}}> 
                 <Grid item>
-                <   Introduction name = {name} description = {introduction}/>
+                    <Introduction name = {name} description = {introduction}/>
                 </Grid> 
             </div>
-            <Grid item style = {{marginLeft: 100, marginTop: 90}}>
+            <Grid item style = {{marginLeft: 200, marginTop: 90}}>
                 <Navigators title = "PROJECTS" index = "01" onClick={() => document.querySelector('#project').scrollIntoView({ behavior: 'smooth'})}/>
                 <Navigators title = "TECHNOLOGIES" index = "02" onClick={() => document.querySelector('#techonologies').scrollIntoView({ behavior: 'smooth'})}/>
             </Grid> 
-
-            <Grid item style = {{marginLeft: 100, marginTop: 125}}>
+            <Grid item style = {{marginLeft: 200, marginTop: 120}}>
                 <Grid container id = 'Other' direction="row" justify="flex-start" alignItems="flex-start" spacing = {1}>
-                    <Grid item>
-                        <Avatar src={avatar}/>
+                    <Grid item style = {{marginTop: -15}}>
+                        <Avatar src={avatar} className={classes.size}/>
                     </Grid>
-                    <Grid item style =  {{marginLeft: 32}}>
+                    <Grid item style =  {{marginLeft: 20}}>
                             <Button href = "https://github.com/Manhsy" target="_blank">
                             <IconContext.Provider value={{ color: "white", size: 20}}>
                                 <VscGithub/> 
@@ -87,4 +105,4 @@ function IntroductionGrid(){
     );
 }
 
-export default IntroductionGrid;
+export default LeftPannelGrid;
