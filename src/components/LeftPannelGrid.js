@@ -17,20 +17,19 @@ import { MdEmail } from  "react-icons/md";
 import avatar from "../image/icon.jpeg";
 const useStyles = makeStyles((theme) => ({
     size: {
-      width: theme.spacing(8),
-      height: theme.spacing(8),
+      width: theme.spacing("2w"),
+      height: theme.spacing("2h"),
     },
   }));
 const name = (
     <>
-      <p style ={{marginTop: 45}}>Hello, I'm</p>
-      <p style ={{marginTop: -120}}>Manh Sy.</p>
+      <p>Hello, I'm Manh Sy.</p>
     </>
   );
-const introduction = <span>Highly motivated Computer Science student at California State University, Sacramento. My love for computer science started when I was introduced to it during my first year of college. At the time, I was a Kinesiology major, 
+const introduction = <span>Highly motivated fourth year Computer Science student. My love for computer science started when I was introduced to it during my first year of college. At the time, I was a Kinesiology major, 
     however, I quickly learned that I enjoy subjects that allows me to exercise my creative problem solving skills. 
     <br/>
-    <br/> 
+    <br/>
     Though I am still unsure on what areas of computer science I want to focus on, I have dipped my toes in areas that pertains to Machine Learning, web development, and API development. All of which you can check out on this page, enjoy!
     </span>
 const sickyStyle = makeStyles((theme) => ({
@@ -38,7 +37,6 @@ const sickyStyle = makeStyles((theme) => ({
       padding: theme.spacing(1),
       [theme.breakpoints.down('sm')]: {
         position: "relative",
-
       },
       [theme.breakpoints.up('md')]: {
         position: "relative",
@@ -50,62 +48,62 @@ const sickyStyle = makeStyles((theme) => ({
     content: {
         padding: theme.spacing(1),
         [theme.breakpoints.down('sm')]: {
-            marginLeft: 100, marginRight: 100
-  
+            marginLeft: "1vw", marginRight: "1vw", marginTop: "-1vw"
         },
         [theme.breakpoints.up('md')]: {
-            marginLeft: 90, marginRight: 50
+            marginLeft: 90, marginRight: 15
         },
         [theme.breakpoints.up('lg')]: {
-            marginLeft: 150, marginRight: 50
+            marginLeft: "5.5vw", marginRight: "5vw", marginTop: "-1vw"
         },
-    }
+    },
+
   }));
 function LeftPannelGrid(props){
     const classes = useStyles();
     const stickyClass = sickyStyle();
     return (
-            <Grid className={stickyClass.root} container sx = "12" lg = "6" md = "12"  direction="column" justify="flex-start" alignItems="flex-start" style={{top: "1rem" }}>
+            <Grid className={stickyClass.root} container sx = "12" lg = "6" md = "12"  direction="column" justify="flex-start" alignItems="flex-start" >
                 <Grid item className={stickyClass.content}> 
                     <Introduction name = {name} description = {introduction}/>
                 </Grid> 
-                <Grid item className={stickyClass.content} style = {{ marginTop: 90}}>
+                <Grid item className={stickyClass.content} style = {{ marginTop: 10}}>
                     <Navigators title = "PROJECTS" index = "01" onClick={() => document.querySelector('#project').scrollIntoView({ behavior: 'smooth'})}/>
                     <Navigators title = "TECHNOLOGIES" index = "02" onClick={() => document.querySelector('#techonologies').scrollIntoView({ behavior: 'smooth'})}/>
                 </Grid> 
-                <Grid item item className={stickyClass.content} style = {{marginTop: 120}}>
-                    <Grid container id = 'Other' direction="row" justify="flex-start" alignItems="flex-start" spacing = {1}>
-                        <Grid item style = {{marginTop: -15}}>
+                <Grid item item className={stickyClass.content} style = {{marginTop: "calc(2.5vw + 2.5vh)"}}>
+                    <Grid container id = 'Other' direction="row" justify="flex-start" alignItems="flex-start" spacing = {.2}>
+                        <Grid item >
                             <Avatar src={avatar} className={classes.size}/>
                         </Grid>
-                        <Grid item style =  {{marginLeft: 20}}>
+                        <Grid item style =  {{marginLeft: ".2vw", }}>
                                 <Button href = "https://github.com/Manhsy" target="_blank">
-                                <IconContext.Provider value={{ color: "white", size: 20}}>
+                                <IconContext.Provider value={{ color: "#ccc", size: "calc(.5vw + .5vh)"}}>
                                     <VscGithub/> 
                                         <div style =  {{marginLeft: 10, marginRight: 11}}>
-                                            <Typography align = 'left' variant="subtitle" component="p" style = {{color:"#FFFFFF"}}>    GitHub
+                                            <Typography align = 'left' variant="subtitle3" component="p" style = {{color:"#ccc", fontSize: "calc(.5vw + .3vh)"}}>    GitHub
                                             </Typography> 
                                         </div>
                                 </IconContext.Provider>
                             </Button>
                         </Grid>
-                        <Grid item style =  {{marginLeft: 16}}>
+                        <Grid item style = {{marginLeft: ".2vw", }}>
                                 <Button href = "https://linkedin.com/in/Mtsss" target="_blank">
-                                <IconContext.Provider value={{ color: "white", size: 20}}>
+                                <IconContext.Provider value={{ color: "#ccc", size: "calc(.5vw + .5vh)"}}>
                                     <FaLinkedin/> 
                                         <div style =  {{marginLeft: 10, marginRight: 11}}>
-                                            <Typography align = 'left' variant="subtitle" component="p" style = {{color:"#FFFFFF"}}>    LinkedIn
+                                            <Typography align = 'left' variant="subtitle3" component="p" style = {{color:"#ccc", fontSize:"calc(.5vw + .3vh)"}}>    LinkedIn
                                             </Typography> 
                                         </div>
                                 </IconContext.Provider>
                             </Button>
                         </Grid>
-                        <Grid item style =  {{marginLeft: 16}}>
+                        <Grid item style =  {{marginLeft: ".2vw",}}>
                             <Button href="mailto:manhsy@csus.edu" target="_blank">
-                                <IconContext.Provider value={{ color: "white", size: 25}}>
+                                <IconContext.Provider value={{ color: "#ccc", size: "calc(.5vw + .5vh)"}}>
                                     <MdEmail/> 
                                         <div style = {{marginLeft: 10, marginRight: 11}}>
-                                            <Typography align = 'left' variant="subtitle" component="p" style = {{color:"#FFFFFF"}}>    Manhsy@csus.edu
+                                            <Typography align = 'left' variant="subtitle3" component="p" style = {{color:"#ccc", fontSize: "calc(.5vw + .3vh)"}}>    Manhsy@csus.edu
                                             </Typography> 
                                         </div>
                                 </IconContext.Provider>

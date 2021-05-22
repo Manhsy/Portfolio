@@ -5,14 +5,14 @@ import Typography from '@material-ui/core/Typography';
 function Introduction({name, description}){
     return(
         <div align = 'left'>
-            <Typography style={{color: "#fff", fontWeight: 'light', fontSize: 90, fontFamily: 'Helvetica'}}>
-                {name}
-            </Typography>
-            <Typography variant = 'subtitle1' style={{color: "#D3D3D3", fontSize: 20, marginTop: -40}}>
-                {description}
-            </Typography>
-            
+                <Typography variant = 'h1' style={{color: "#fff", fontWeight: 'medium', fontSize: "calc(3vw + 3vh)", fontFamily: 'Helvetica'}}>
+                    {name}
+                </Typography>
+                <Typography variant = 'subtitle5' style={{fontWeight: 'light', fontFamily: 'Helvetica', color: "#ccc", fontSize: "calc(.3vw + 1.5vh)"}}>
+                    {description}
+                </Typography>
         </div>
+
     );
 }
 export default Introduction;

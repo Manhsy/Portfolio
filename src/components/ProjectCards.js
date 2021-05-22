@@ -52,12 +52,12 @@ function ProjectCards({info}){
                     image = {info.image}
                 />
                 <CardContent>
-                    <Typography align = 'left' gutterBottom variant="h5" component="h2" style = {{color:"#FFFFFF"}}>
+                    <Typography align = 'left' variant="h5"  style = {{color:"#FFFFFF", marginBottom: 5, }}>
                         {info.name}
                     </Typography>
-                    <Typography align = 'left' variant="body2" component="p" style = {{color:"#FFFFFF"}}>
+    
+                    <Typography align = 'left' variant="subtitle2" style = {{color:"#FFFFFF"}}>
                         {info.description}
-
                     </Typography>
                 </CardContent>
             </CardActionArea>

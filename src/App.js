@@ -11,8 +11,18 @@ import LeftPannelGrid from './components/LeftPannelGrid';
 
 const useStyles = makeStyles ((theme) => ({
   grid: {
-    width: '100%',
-    margin: '0px',
+    content: {
+      padding: theme.spacing(1),
+      [theme.breakpoints.down('sm')]: {
+          marginLeft: "1vw", marginRight: "1vw", marginTop: "1vw"
+      },
+      [theme.breakpoints.up('md')]: {
+          marginLeft: 90, marginRight: 15
+      },
+      [theme.breakpoints.up('lg')]: {
+          marginLeft: "5.5vw", marginRight: "5vw", marginTop: "-1vw"
+      },
+  }
   },
 
 }));
@@ -21,14 +31,13 @@ function App() {
   const classes = useStyles();
   return (
     <div> 
-      <Grid container sx = "12" md = "12" lg = "12" className={classes.grid} direction="row" justify="flex-start" alignItems="flex-start" spacing={100}>
+      <Grid container sx = "12" md = "12" lg = "12" className={classes.grid} direction="row" justify="flex-start" alignItems="flex-start" >
           <Grid item md>
             <LeftPannelGrid/>
           </Grid>
-          <Grid item md>
+          <Grid item md className={classes.grid}>
             <RightPannelGrid/>
             </Grid>
-
       </Grid>
     </div>
 
