@@ -27,10 +27,10 @@ const name = (
     </>
   );
 const introduction = <span>Highly motivated fourth year Computer Science student. My love for computer science started when I was introduced to it during my first year of college. At the time, I was a Kinesiology major, 
-    however, I quickly learned that I enjoy subjects that allows me to exercise my creative problem solving skills. 
+    however, I quickly learned that I enjoy subjects that allow me to exercise my creative problem solving skills. 
     <br/>
     <br/>
-    Though I am still unsure on what areas of computer science I want to focus on, I have dipped my toes in areas that pertains to Machine Learning, web development, and API development. All of which you can check out on this page, enjoy!
+    Though I am still unsure on what areas of computer science I would like to focus on, I have experience with areas that pertains to Machine Learning, web development, and API development. All of which you can check out on this page, enjoy!
     </span>
 const sickyStyle = makeStyles((theme) => ({
     root: {
